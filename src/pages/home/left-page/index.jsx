@@ -1,10 +1,12 @@
 import { useState } from "react";
 import {
   IconCalendar,
+  IconDownload,
   IconEmail,
   IconLocation,
   IconPhone,
 } from "../../../components/icons";
+import { avatar } from "../../../assets/images";
 
 const LeftPage = () => {
   const [isCopy, setIsCopy] = useState(false);
@@ -21,14 +23,15 @@ const LeftPage = () => {
     }, 2000);
   };
   return (
-    <div className="w-[300px] bg-white h-[500px] rounded-xl shadow-xl hover:shadow-2xl duration-500 flex items-center justify-center flex-col px-5">
-      <h1 className="font-bold text-24 text-grey-1000">Ninh Xuân Huấn</h1>
-      <div className="flex justify-center items-center bg-grey-200 px-4 py-2 rounded-xl hover:bg-pink-800 duration-300 group">
-        <p className="font-semibold text-14 text-grey-600 group-hover:text-grey-1000 duration-300">
-          Fullstack Developer
-        </p>
+    <div className="w-[300px] bg-white h-[600px] rounded-xl drop-shadow-xl hover:shadow-2xl duration-500 flex items-center justify-center flex-col px-5 relative">
+      <div className="absolute -top-[100px] drop-shadow-xl">
+        <img src={avatar} alt="avt" className="rounded-md scale-75" />
       </div>
-      <div className="flex flex-col justify-center items-start bg-grey-100 p-5 rounded-xl w-full mt-10 mb-2 gap-2">
+      <h1 className="font-bold text-24 text-grey-1000">Ninh Xuân Huấn</h1>
+      <div className="flex justify-center items-center px-4 py-2 rounded-xl bg-pink-700">
+        <p className="font-semibold text-14 text-white">Fullstack Developer</p>
+      </div>
+      <div className="flex flex-col justify-center items-start bg-grey-200 p-5 rounded-xl w-full mt-10 mb-2 gap-2">
         <div
           className="flex items-center justify-center gap-2 hover:cursor-pointer"
           onClick={() => handleCopy("+84 0376382684", true)}
@@ -44,7 +47,10 @@ const LeftPage = () => {
             <p className="text-14 text-grey-1000">(+84) 376382684</p>
           </div>
         </div>
-        <div className="flex items-center justify-center gap-2 hover:cursor-pointer" onClick={() => handleCopy("huanhust1998@gmail.com")}>
+        <div
+          className="flex items-center justify-center gap-2 hover:cursor-pointer"
+          onClick={() => handleCopy("huanhust1998@gmail.com")}
+        >
           <button
             className="flex justify-center items-center bg-white p-2 rounded-lg h-full"
             type="button"
@@ -84,10 +90,17 @@ const LeftPage = () => {
       <p
         className={`${
           isCopy ? "opacity-100" : "opacity-0"
-        } duration-500 font-bold text-14 text-pink-800`}
+        } duration-500 font-medium text-14 text-pink-800`}
       >
-        {textCopy} !!!
+        {textCopy} 😍 😍
       </p>
+
+      <button className="flex items-center justify-center gap-1 bg-pink-700 px-4 py-2 rounded-xl absolute bottom-10">
+        <div className="animate-bounce">
+          <IconDownload color="#fff" />
+        </div>
+        <span className="text-14 text-white font-semibold">Download CV</span>
+      </button>
     </div>
   );
 };

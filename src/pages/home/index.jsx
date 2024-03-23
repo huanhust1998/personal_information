@@ -3,7 +3,7 @@ import RightPage from "./right-page";
 
 const HomePage = () => {
   return (
-    <div className="w-[900px] h-full flex items-center gap-10">
+    <div className="w-[900px] h-full flex items-center gap-5">
       <LeftPage />
       <RightPage />
     </div>
