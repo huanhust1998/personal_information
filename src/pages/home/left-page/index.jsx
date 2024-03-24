@@ -29,7 +29,7 @@ const LeftPage = () => {
       </div>
       <h1 className="font-bold text-24 text-grey-1000">Ninh Xuân Huấn</h1>
       <div className="flex justify-center items-center px-4 py-2 rounded-xl bg-pink-700">
-        <p className="font-semibold text-14 text-white">Fullstack Developer</p>
+        <p className="font-semibold text-14 text-white">Frontend Developer</p>
       </div>
       <div className="flex flex-col justify-center items-start bg-grey-200 p-5 rounded-xl w-full mt-10 mb-2 gap-2">
         <div
