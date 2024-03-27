@@ -22,6 +22,19 @@ const LeftPage = () => {
       setIsCopy(false);
     }, 2000);
   };
+
+  const handleDownloadCV = () => {
+    const fileUrl = "src/assets/files/cv.docx"; // Đường dẫn của tệp tin bạn muốn tải xuống
+
+    const link = document.createElement("a");
+    link.href = fileUrl;
+    link.download = "NINH_XUAN_HUAN-FRONTEND_DEVELOP"; // Tên mà tệp tin sẽ được lưu lại sau khi tải xuống
+
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <div className="w-[300px] bg-white h-[600px] rounded-xl drop-shadow-xl hover:shadow-2xl duration-500 flex items-center justify-center flex-col px-5 relative">
       <div className="absolute -top-[100px] drop-shadow-xl">
@@ -95,7 +108,7 @@ const LeftPage = () => {
         {textCopy} 😍 😍
       </p>
 
-      <button className="flex items-center justify-center gap-1 bg-pink-700 px-4 py-2 rounded-xl absolute bottom-10">
+      <button className="flex items-center justify-center gap-1 bg-pink-700 px-4 py-2 rounded-xl absolute bottom-10" type="button" onClick={()=>handleDownloadCV()}>
         <div className="animate-bounce">
           <IconDownload color="#fff" />
         </div>
